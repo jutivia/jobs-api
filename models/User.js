@@ -36,8 +36,8 @@ UserSchema.methods.getName = function () {
 UserSchema.methods.generateToken = function () {
   const token = jwt.sign(
     { username: this.name, userId: this._id },
-    process.env.SECRET,
-    { expiresIn: "30d" }
+    process.env.JWT_SECRET,
+    { expiresIn: process.env.JWT_LIFE }
   );
   return token
 };
