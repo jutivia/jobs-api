@@ -3,6 +3,7 @@ require("express-async-errors");
 const express = require("express");
 const app = express();
 const connectDb = require('./db/connect')
+const authenticationMiddleware = require("./middleware/authentication");
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -15,7 +16,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/jobs', [authenticationMiddleware, jobRouter]);
 
 
 app.use([notFoundMiddleware, errorHandlerMiddleware]);
