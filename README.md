@@ -1,3 +1,3 @@
 # jobs-api
-A CRUD api that helps users to create accounts, save and track their job search progress.
+A CRUD api that allows users to sign up on a platform, and create, save and keep track their job search progress.
 <br/> Link to Swagger UI Documentation: https://app.swaggerhub.com/apis-docs/RUKKYLAWTL/jobs-api/1.0.0
